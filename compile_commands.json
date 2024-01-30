@@ -1,0 +1,30 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Ivendor/glad/include",
+      "-Ivendor/glm",
+      "-o",
+      "opengl",
+      "src/Main.cpp"
+    ],
+    "directory": "/home/chaeng/projects/cpp/sertemp-gl",
+    "file": "/home/chaeng/projects/cpp/sertemp-gl/src/Main.cpp",
+    "output": "/home/chaeng/projects/cpp/sertemp-gl/opengl"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Ivendor/glad/include",
+      "-Ivendor/glm",
+      "-o",
+      "opengl",
+      "src/glad.c"
+    ],
+    "directory": "/home/chaeng/projects/cpp/sertemp-gl",
+    "file": "/home/chaeng/projects/cpp/sertemp-gl/src/glad.c",
+    "output": "/home/chaeng/projects/cpp/sertemp-gl/opengl"
+  }
+]
