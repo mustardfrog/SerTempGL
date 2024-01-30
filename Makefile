@@ -4,4 +4,7 @@ OPTS=-lGL -lglfw -ldl  -lX11 -lXrandr -lpthread
 
 opengl: $(SRCS)
 	@g++ $(SRCS) $(INCLUDE) $(OPTS) -o opengl
+
+run: $(SRCS)
+	@g++ $(SRCS) $(INCLUDE) $(OPTS) -o opengl
 	@./opengl
