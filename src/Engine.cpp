@@ -1,9 +1,13 @@
 #include "Engine.hpp"
 #include "Core/GL.hpp"
+#include "Renderer/Renderer.hpp"
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
 
-void Engine::Init() { GL::Init(); }
+void Engine::Init() {
+  GL::Init();
+  Renderer::Init();
+}
 
 void Engine::Run() {
 
@@ -11,16 +15,16 @@ void Engine::Run() {
 
   while (!glfwWindowShouldClose(GL::GetWindowPtr())) {
 
-    glClearColor(0.9f, 0.3f, 0.3f, 0.3f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    Renderer::Clear();
 
-    if (glfwGetKey(GL::GetWindowPtr(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-      glfwSetWindowShouldClose(GL::GetWindowPtr(), true);
-    }
+    GL::ProcessInput(GL::GetWindowPtr());
 
-    glfwSwapBuffers(GL::GetWindowPtr());
-    glfwPollEvents();
+    Renderer::Render();
+
+    GL::Swap(GL::GetWindowPtr());
   }
+
+  Engine::CleanUp();
 }
 
 void Engine::CleanUp() { GL::CleanUp(); }

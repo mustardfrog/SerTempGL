@@ -36,3 +36,15 @@ void GL::CreateWindow() {
 }
 
 GLFWwindow *GL::GetWindowPtr() { return _window; }
+
+void GL::ProcessInput(GLFWwindow *window) {
+  if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+    glfwSetWindowShouldClose(window, true);
+  }
+}
+
+
+void GL::Swap(GLFWwindow *window) {
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+}
